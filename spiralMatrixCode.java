@@ -1,25 +1,42 @@
 public class spiralMatrixCode {
     public static void main(String[] args) {
-        int [][] multiArray ={{1,2,3,4},
-                              {5,6,7,8},
-                            {9,10,11,12},
-                            {13,14,15,16}} ;
+        int [][] multiArray ={{1,2,3,4,17},         // This Code is for nXn , nXm , may be even or odd also.
+                              {5,6,7,8,18},
+                            {9,10,11,12,19},
+                            {13,14,15,16,20}} ;
 
         int startRow = 0 ;
         int startCol = 0 ;
         int endRow = multiArray.length-1 ;
         int endCol = multiArray[0].length-1 ;
-
+        System.out.println("Array Elements In Spiral Format!");
         while (startRow <= endRow && startCol <= endCol){
-            //Top
+            // Top
             for (int j=startCol ; j<=endCol ; j++){
-                System.out.print(multiArray[startRow][j]);
+                System.out.print(multiArray[startRow][j]+" ");
             }
             // Right
             for (int i=startRow+1 ; i<=endRow ; i++){
-                System.out.print(multiArray[i][endCol]);
+                System.out.print(multiArray[i][endCol]+" ");
+            }
+            // Bottom
+            for (int j=endCol-1 ; j>= startCol ; j--){
+                if (startRow==endRow){
+                    break;
+                }
+                System.out.print(multiArray[endRow][j]+" ");
             }
             // Left
+            for (int i=endRow-1 ; i>= startRow+1 ; i--){
+                if (startCol == endCol){
+                    break;
+                }
+                System.out.print(multiArray[i][startCol]+" ");
+            }
+            startCol++ ;
+            startRow++ ;
+            endRow-- ;
+            endCol-- ;
         }
     }
 }
