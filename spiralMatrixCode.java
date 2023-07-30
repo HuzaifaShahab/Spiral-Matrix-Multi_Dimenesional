@@ -12,7 +12,14 @@ public class spiralMatrixCode {
 
         while (startRow <= endRow && startCol <= endCol){
             //Top
-            
+            for (int j=startCol ; j<=endCol ; j++){
+                System.out.print(multiArray[startRow][j]);
+            }
+            // Right
+            for (int i=startRow+1 ; i<=endRow ; i++){
+                System.out.print(multiArray[i][endCol]);
+            }
+            // Left
         }
     }
 }
